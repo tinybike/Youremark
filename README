@@ -1,0 +1,25 @@
+Youremark (pronounced "Your remark") is a free, open-source comments system written in PHP.  I wrote it because I run a site (thefunshare.com) with its own login, and to integrate my login with third-party comments systems would be expensive.  I thought other sites might find it useful to have a commenting system integrated with their private login system.
+
+Setup instructions:
+
+1. Download youremark.zip and extract to your web directory.  youremark.zip contains youremark.php, createdb.html, createdb.php, dbfun.php, and css/comments.css:
+- youremark.php: Template page for displaying comments.
+- createdb.html and createdb.php: These files are used once to set up a comments table in your database.
+- dbfun.php: PHP database functions.
+- comments.css: CSS definitions for proper comment indentation.
+2. Open createdb.html in your browser, and input your database info.  A comments table will automatically be created in this database.  (Note: you must have CREATE permission for this to work.)  By default, this table is set up as:
+	column 1: commentid INT NOT NULL AUTO_INCREMENT
+	column 2: eventid INT
+	column 3: userid VARCHAR(25)
+	column 4: replyto INT
+	column 5: depth INT
+	column 6: commentdate DATETIME
+	column 7: body TEXT
+with primary key commentid.  'eventid' is the unique identifier of the page that will have comments on it, which is assumed by default to be a number in the page URL -- for example, page 5 would be youremark.php?id=5.  If your site is set up differently, edit the 'CREATE TABLE' query in createdb.php.
+3. At the top of youremark.php is an instruction to ENTER YOUR DATABASE INFORMATION HERE.  Type in your info (do not remove the single quotes).
+4. You can use youremark.php as a template for the page you want comments on, OR you can copy-and-paste the blocks of code marked in the file.  If you copy-and-paste, note that your file must have a .php (not .html) extension for this code to work.
+
+So far, I've only tested Youremark with MySQL 5.5.27 and PHP 5.4.6.  If you have trouble setting it up, feel free to contact me!
+
+Jack Peterson (jack@tinybike.net)
+License: LGPL

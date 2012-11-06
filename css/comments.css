@@ -1,0 +1,29 @@
+.pleasejoin {
+	margin-top:0;
+	margin-bottom:10px;
+	padding: 10px;
+    background: #fff;
+    border: 1px solid;
+	font-size: 14px;
+}
+#comments {
+	margin-top:10px;
+	margin-bottom:20px;
+	padding: 20px;
+    background: #fff;
+}
+.comment {
+	margin-top:5px;
+	margin-bottom:10px;
+    background: #fff;
+    border-bottom: 1px solid;
+}
+.commentindent {
+	margin-left: 40px;
+}
+.commentreply {
+	border-bottom: 1px solid;
+	margin-top:5px;
+	margin-bottom:10px;
+    background: #fff;
+}
